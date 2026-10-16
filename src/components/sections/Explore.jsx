@@ -24,7 +24,7 @@ export default function OnlineServices() {
   return (
     <>
       {/* Blue Section */}
-      <section className="bg-[#06163A] pt-12 lg:pt-[50px]">
+      <section className="bg-[#06163A] pt-12 lg:pt-[50px] overflow-hidden">
         <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-[38%_62%] gap-8 lg:gap-12 items-start">
             
@@ -42,11 +42,11 @@ export default function OnlineServices() {
             </div>
 
             {/* Right Card */}
-            <div className="shadow-2xl relative lg:-mb-24 z-10">
+            <div className="shadow-xl relative lg:-mb-24 z-10">
               <div className="grid md:grid-cols-2">
 
                 {/* White Column */}
-                <div className="bg-white px-6 sm:px-8 lg:px-[50px] py-8 lg:py-10">
+                <div className="bg-white px-6 sm:px-8 py-8 lg:py-10">
                   {leftServices.map((item, index) => (
                     <a
                       key={index}

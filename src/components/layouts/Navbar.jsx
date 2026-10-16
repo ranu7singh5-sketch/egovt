@@ -36,13 +36,23 @@ export default function Navbar() {
     "Contact",
   ];
 
+  const homeItems = [
+    { name: "Home Default", href: "/" },
+    { name: "Home Classic", href: "/HomeClassic" },
+    { name: "Political Party", href: "/political-party" },
+    { name: "Travel & Tourism", href: "/travel-tourism" },
+    { name: "Local Town", href: "/local-town" },
+    { name: "City Mall", href: "/city-mall" },
+    { name: "County", href: "/county" },
+    { name: "NGO", href: "/ngo" },
+  ];
   return (
+    
     <nav
-      className={`sticky left-0 w-full bg-white z-50 transition-all duration-300 ${
-        scrolled
-          ? "top-0 shadow-lg"
-          : "lg:top-10 top-0 shadow-md"
-      }`}
+      className={`sticky left-0 w-full bg-white z-50 transition-all duration-300 ${scrolled
+        ? "top-0 shadow-lg"
+        : "lg:top-10 top-0 shadow-md"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 lg:h-24">
@@ -69,21 +79,17 @@ export default function Navbar() {
 
               <div className="absolute left-0 top-full w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <ul className="bg-white shadow-xl py-2">
-                  {[
-                    "Home Default",
-                    "Home Classic",
-                    "Political Party",
-                    "Travel & Tourism",
-                    "Local Town",
-                    "City Mall",
-                    "County",
-                    "NGO",
-                  ].map((item, i) => (
+                  {homeItems.map((item, i) => (
                     <li
                       key={i}
-                      className="px-5 py-3 text-gray-500 hover:bg-red-500 hover:text-white transition"
+                      className="hover:bg-red-500 hover:text-white transition"
                     >
-                      {item}
+                      <Link
+                        href={item.href}
+                        className="block px-5 py-3 text-gray-500 hover:text-white"
+                      >
+                        {item.name}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -160,7 +166,7 @@ export default function Navbar() {
             </div>
 
             {/* Report Button */}
-            <button className="h-11 xl:h-12 px-4 xl:px-5 border-2 border-blue-600 text-blue-600 font-medium hover:bg-red-500 hover:border-red-500 hover:text-white transition-all duration-300">
+            <button className="lg:hidden h-11 xl:h-12 px-4 xl:px-5 border-2 border-blue-600 text-blue-600 font-medium hover:bg-red-500 hover:border-red-500 hover:text-white transition-all duration-300">
               Report an Issue
             </button>
           </div>
@@ -184,9 +190,8 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ${
-          menuOpen ? "max-h-[600px]" : "max-h-0"
-        }`}
+        className={`lg:hidden overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-[600px]" : "max-h-0"
+          }`}
       >
         <div className="bg-white border-t">
           <ul className="flex flex-col">
@@ -211,7 +216,7 @@ export default function Navbar() {
 
           {/* Button */}
           <div className="p-5">
-            <button className="w-full h-12 border-2 border-blue-600 text-blue-600 font-medium hover:bg-red-500 hover:border-red-500 hover:text-white transition-all duration-300">
+            <button className="lg:hidden w-full h-12 border-2 border-blue-600 text-blue-600 font-medium hover:bg-red-500 hover:border-red-500 hover:text-white transition-all duration-300">
               Report an Issue
             </button>
           </div>
